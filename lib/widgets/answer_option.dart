@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:python_system/constants.dart';
 import 'package:python_system/controllers/questions_controller.dart';
+import 'package:python_system/core/to_arabic_number_convertor.dart';
 
 class AnswerOption extends StatelessWidget {
   const AnswerOption({
@@ -28,21 +31,26 @@ class AnswerOption extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 border:
-                    Border.all(width: 2, color: controller.getColor(index))),
+                    Border.all(width: 1, color: controller.getColor(index))),
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: RichText(
                 text: TextSpan(
-                    text: '${index + 1}.  ',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
+                    text: controller.isArabic?'${index + 1}.  '.toArabicNumbers:'${index + 1}.  ',
+                    style: GoogleFonts.cairo(
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        color: kWhiteColor,
+                      ),
                     ),
                     children: [
                       TextSpan(
                         text: text,
-                        style: const TextStyle(
-                          fontSize: 22,
+                        style: GoogleFonts.cairo(
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: kWhiteColor,
+                          ),
                         ),
                       ),
                     ]),

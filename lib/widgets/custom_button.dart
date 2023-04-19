@@ -1,52 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 
 class CustomButton extends StatelessWidget {
-  final Function() onPressed;
-  final String text;
-  final double height, width, radius;
-
-  const CustomButton({
-    Key? key,
-    required this.onPressed,
-    required this.text,
-    this.height = 150,
-    this.width = 150,
-    this.radius = 150,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      width: width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
-      ),
-      child: FloatingActionButton.extended(
-        elevation: 0,
-        backgroundColor: kPrimaryColor,
-        onPressed: onPressed,
-        label: Text(
-          text,
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(color: Colors.black),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomElevated extends StatelessWidget {
   final String text;
   final Color textColor, btnColor;
   final double hSize, wSize, fontSize, borderRadius, elevation;
   final Function() press;
 
-  const CustomElevated({
+  const CustomButton({
     Key? key,
     required this.text,
     required this.press,
@@ -75,7 +38,12 @@ class CustomElevated extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: TextStyle(color: textColor, fontSize: fontSize),
+        style: GoogleFonts.cairo(
+          textStyle: TextStyle(
+            color: textColor,
+            fontSize: fontSize,
+          ),
+        ),
       ),
     );
   }

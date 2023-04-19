@@ -10,170 +10,158 @@ import 'package:python_system/screens/welcome_screen.dart';
 class QuestionsController extends GetxController {
   String name = '';
 
-  //question variables
+  //question
   int get countOfQuestion => _questionsList.length;
   final List<QuestionModel> _questionsList = [
     QuestionModel(
       id: 1,
-      question: "Can the player use the injured muscle and continue playing?",
+      question: "Q1",
       answer: 0,
-      options: ['YES', 'NO', 'Relatively poor muscle strength'],
+      options: ['yes', 'no', 'Q1_op3'],
     ),
     QuestionModel(
       id: 2,
-      question: "Is there bleeding/oozing blood?",
+      question: "Q2",
       answer: 0,
-      options: ['Tough', 'Simple'],
+      options: ['tough', 'simple'],
     ),
     QuestionModel(
       id: 3,
-      question: "Feeling pain as/like .. ",
+      question: "Q3",
       answer: 0,
-      options: ['knife strike', 'tingling or numbness'],
+      options: ['knife_strike', 'tingling_or_numbness'],
     ),
     QuestionModel(
       id: 4,
-      question: "Is there a continuous contraction in the affected muscle?",
+      question: "Q4",
       answer: 0,
-      options: ['Simple contraction', 'Severe contraction'],
+      options: ['simple_contraction', 'severe_contraction'],
     ),
     QuestionModel(
       id: 5,
-      question: "Do you feel stiff/rigorism when stressed?",
+      question: "Q5",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 6,
-      question: "Do you feel weak in the muscle and lack of flexibility ?",
+      question: "Q6",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 7,
-      question: "Do you notice an increase in symptoms when exposed to a cold?",
+      question: "Q7",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 8,
-      question:
-          "Do you feel pain when the doctor presses on the affected area, the bone with the muscles from which they germinate/sprout",
+      question: "Q8",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 9,
-      question:
-          "Do you feel very tired and exhausted, and the level of physical capabilities decreases?",
+      question: "Question9",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 10,
-      question:
-          "Do you notice a gradual increase in swelling during the first twenty-four hours of the injury?",
+      question: "Q10",
       answer: 0,
-      options: ['YES', 'To some extent', 'NO'],
+      options: ['yes', 'to_some_extent', 'no'],
     ),
     QuestionModel(
       id: 11,
-      question: "Does the skin color change?",
+      question: "Q11",
       answer: 0,
-      options: ['YES', 'To some extent', 'NO'],
+      options: ['yes', 'to_some_extent', 'no'],
     ),
     QuestionModel(
       id: 12,
-      question: "Is there a tumor?",
+      question: "Q12",
       answer: 0,
-      options: ['YES', 'To some extent', 'NO'],
+      options: ['yes', 'to_some_extent', 'no'],
     ),
     QuestionModel(
       id: 13,
-      question:
-          "Is the blood gathering clear around the site of the injury, especially after 48 hours have passed?",
+      question: "Q13",
       answer: 0,
-      options: ['YES', 'To some extent', 'NO'],
+      options: ['yes', 'to_some_extent', 'no'],
     ),
     QuestionModel(
       id: 14,
-      question: "Is there a gap or depression in the place of injury?",
+      question: "Q14",
       answer: 0,
-      options: ['YES', 'Simple', 'NO'],
+      options: ['yes', 'simple', 'no'],
     ),
     QuestionModel(
       id: 15,
-      question: "Does the temperature change locally?",
+      question: "Q15",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 16,
-      question:
-          "Is the continuous contraction can be seen and touched by hand?",
+      question: "Q16",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 17,
-      question:
-          "Do you feel pain when moving the joint on which the muscle works, which leads to a limitation in the movement of the joint",
+      question: "Q17",
       answer: 0,
-      options: ['great pain', 'little pain', 'NO'],
+      options: ['great_pain', 'little_pain', 'no'],
     ),
     QuestionModel(
       id: 18,
-      question: "Is there a low level of neuromuscular compatibility?",
+      question: "Q18",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 19,
-      question: "Can you move the injured muscle?",
+      question: "Q19",
       answer: 0,
-      options: ['YES', 'Simple movement', 'NO'],
+      options: ['yes', 'simple_movement', 'no'],
     ),
     QuestionModel(
       id: 20,
-      question:
-          "As a result of an external shock or external violence, such as colliding with a solid object or the player's body",
+      question: "َQ20",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 21,
-      question:
-          "As a result of too much stretching of some fibers in the muscle",
+      question: "Question21",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 22,
-      question:
-          "As a result of the sudden violent muscle contraction to resist a supernatural force the moment it occurs when the muscle is not prepared for that",
+      question: "Q22",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 23,
-      question:
-          "The result of an involuntary muscle contraction that cannot be relaxed",
+      question: "Q23",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 24,
-      question:
-          "As a result of chronic stress and tension on the small fibers that connect the muscle to the bone area associated with it",
+      question: "Q24",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
     QuestionModel(
       id: 25,
-      question:
-          "As a result of a decrease in the efficiency and ability to play with a feeling of severe pain when performing muscular effort",
+      question: "Q25",
       answer: 0,
-      options: ['YES', 'NO'],
+      options: ['yes', 'no'],
     ),
   ];
 
@@ -182,6 +170,8 @@ class QuestionsController extends GetxController {
   bool _isPressed = false;
 
   bool get isPressed => _isPressed; //To check if the answer is pressed
+
+  bool isArabic = false;
 
   double _numberOfQuestion = 1;
 
@@ -505,7 +495,7 @@ class QuestionsController extends GetxController {
   Color getColor(int answerIndex) {
     if (_isPressed) {
       if (answerIndex == _selectAnswer) {
-        return kPrimaryColor;
+        return kSecColor;
       }
     }
     return Colors.white;
@@ -521,7 +511,7 @@ class QuestionsController extends GetxController {
     _countOfTighteningOfMuscle = 0;
     _countOfPartialRupture = 0;
     _countOfTotalRupture = 0;
-    _numberOfQuestion= 1;
+    _numberOfQuestion = 1;
     resetAnswer();
     _selectAnswer = null;
     Get.offAllNamed(WelcomeScreen.routeName);

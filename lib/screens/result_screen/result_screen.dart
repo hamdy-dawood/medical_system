@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:python_system/controllers/questions_controller.dart';
 import 'package:python_system/widgets/custom_button.dart';
 import 'package:python_system/widgets/result_card.dart';
@@ -28,33 +29,32 @@ class ResultScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SizedBox(
-                        height: 50,
+                        height: 70,
                       ),
                       RichText(
                         text: TextSpan(
-                          text: 'Hello ',
-                          style: const TextStyle(
-                            fontSize: 30,
-                            color: kPrimaryColor,
+                          text: 'hello'.tr,
+                          style: GoogleFonts.cairo(
+                            textStyle: const TextStyle(
+                              fontSize: 30,
+                              color: kPrimaryColor,
+                            ),
                           ),
                           children: [
                             TextSpan(
                               text: controller.name,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .displaySmall!
-                                  .copyWith(
-                                    color: kPrimaryColor,
-                                  ),
+                              style: GoogleFonts.cairo(
+                                textStyle: const TextStyle(
+                                  fontSize: 40,
+                                  color: kPrimaryColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      if (controller.bruiseResult >
-                              controller.muscleContractionResult &&
+                      if (controller.bruiseResult > controller.muscleContractionResult &&
                           controller.bruiseResult > controller.myositisResult &&
                           controller.bruiseResult >
                               controller.muscleStrainResult &&
@@ -65,15 +65,19 @@ class ResultScreen extends StatelessWidget {
                           controller.bruiseResult >
                               controller.totalRuptureResult &&
                           controller.bruiseResult >= 5) ...[
-                        const ResultCard(
-                          title: "Bruise:",
-                          subTitle:
-                              " Rest time before starting the treatment: Take a rest from 24 hours to 48 hours. Duration of the treatment : 1 day to 10 days.",
-                          image1: "assets/bruises1.png",
-                          image2: "assets/bruises2.png",
+                        ResultCard(
+                          title: "bruise".tr,
+                          symptoms: 4,
+                          symptom1: "bruise_symptom1".tr,
+                          symptom2: "bruise_symptom2".tr,
+                          symptom3: "bruise_symptom3".tr,
+                          symptom4: "bruise_symptom4".tr,
+                          treatment: "desc_bruise".tr,
+                          image1: "assets/images/bruises1.png",
+                          image2: "assets/images/bruises2.png",
                         ),
-                      ]else if(controller.muscleContractionResult >
-                          controller.bruiseResult &&
+                      ] else if (controller.muscleContractionResult >
+                              controller.bruiseResult &&
                           controller.muscleContractionResult >
                               controller.myositisResult &&
                           controller.muscleContractionResult >
@@ -85,13 +89,15 @@ class ResultScreen extends StatelessWidget {
                           controller.muscleContractionResult >
                               controller.totalRuptureResult &&
                           controller.muscleContractionResult >= 5) ...[
-                        const ResultCard(
-                          title: "Muscle contraction:",
-                          subTitle:
-                          " Rest time before starting the treatment:Take a rest from 1 day to 3 days.Duration of the treatment : 1 week.",
-                          image1: "assets/muscle_contraction.png",
+                        ResultCard(
+                          title: "muscle_contraction".tr,
+                          symptoms: 2,
+                          symptom1: "muscle_contraction_symptom1".tr,
+                          symptom2: "muscle_contraction_symptom2".tr,
+                          treatment: "desc_muscle_contraction".tr,
+                          image1: "assets/images/muscle_contraction.png",
                         ),
-                      ]else if(controller.myositisResult > controller.bruiseResult &&
+                      ] else if (controller.myositisResult > controller.bruiseResult &&
                           controller.myositisResult >
                               controller.muscleContractionResult &&
                           controller.myositisResult >
@@ -103,14 +109,15 @@ class ResultScreen extends StatelessWidget {
                           controller.myositisResult >
                               controller.totalRuptureResult &&
                           controller.myositisResult >= 5) ...[
-                        const ResultCard(
-                          title: "Myositis:",
-                          subTitle:
-                          " Rest time before starting the treatment:Take a rest from 2 days to 4 days.Duration of the treatment : from 1 week to 3 weeks.",
-                          image1: "assets/myositis.png",
+                        ResultCard(
+                          title: "myositis",
+                          symptoms: 2,
+                          symptom1: "myositis_symptom1".tr,
+                          symptom2: "myositis_symptom2".tr,
+                          treatment: "desc_myositis".tr,
+                          image1: "assets/images/myositis.png",
                         ),
-                      ]else if(controller.muscleStrainResult >
-                          controller.bruiseResult &&
+                      ] else if (controller.muscleStrainResult > controller.bruiseResult &&
                           controller.muscleStrainResult >
                               controller.muscleContractionResult &&
                           controller.muscleStrainResult >
@@ -122,14 +129,17 @@ class ResultScreen extends StatelessWidget {
                           controller.muscleStrainResult >
                               controller.totalRuptureResult &&
                           controller.muscleStrainResult >= 4) ...[
-                        const ResultCard(
-                          title: "Muscle Strain:",
-                          subTitle:
-                          " Rest time before starting the treatment: Take a rest from 2 days to 4 days. Duration of the treatment : from 1 day to 10 days.",
-                          image1: "assets/muscle_strain.png",
+                        ResultCard(
+                          title: "muscle_strain".tr,
+                          symptoms: 3,
+                          symptom1: "muscle_strain_symptom1".tr,
+                          symptom2: "muscle_strain_symptom2".tr,
+                          symptom3: "muscle_strain_symptom3".tr,
+                          treatment: "desc_muscle_strain".tr,
+                          image1: "assets/images/muscle_strain.png",
                         ),
-                      ]else if(controller.tighteningOfMuscleResult >
-                          controller.bruiseResult &&
+                      ] else if (controller.tighteningOfMuscleResult >
+                              controller.bruiseResult &&
                           controller.tighteningOfMuscleResult >
                               controller.muscleContractionResult &&
                           controller.tighteningOfMuscleResult >
@@ -141,14 +151,15 @@ class ResultScreen extends StatelessWidget {
                           controller.tighteningOfMuscleResult >
                               controller.totalRuptureResult &&
                           controller.tighteningOfMuscleResult >= 4) ...[
-                        const ResultCard(
-                          title: "Tightening Of Muscle:",
-                          subTitle:
-                          " Rest time before starting the treatment: Take a rest from 2 days to 4 days. Duration of the treatment : from 10 days to 20 days.",
-                          image1: "assets/tightening_muscle.png",
+                        ResultCard(
+                          title: "tightening_of_muscle".tr,
+                          symptoms: 2,
+                          symptom1: "tightening_of_muscle_symptom1".tr,
+                          symptom2: "tightening_of_muscle_symptom2".tr,
+                          treatment: "desc_tightening_of_muscle".tr,
+                          image1: "assets/images/tightening_muscle.png",
                         ),
-                      ]else if(controller.partialRuptureResult >
-                          controller.bruiseResult &&
+                      ] else if (controller.partialRuptureResult > controller.bruiseResult &&
                           controller.partialRuptureResult >
                               controller.muscleContractionResult &&
                           controller.partialRuptureResult >
@@ -160,46 +171,40 @@ class ResultScreen extends StatelessWidget {
                           controller.partialRuptureResult >
                               controller.totalRuptureResult &&
                           controller.partialRuptureResult >= 7) ...[
-                        const ResultCard(
-                          title: "Partial Rupture:",
-                          subTitle:
-                          " Rest time before starting the treatment: Take a rest from 3 days to 6 days. Duration of the treatment : from 3 weeks to 7 weeks.",
-                          image1: "assets/partial _rupture.png",
+                        ResultCard(
+                          title: "partial_rupture".tr,
+                          symptoms: 1,
+                          symptom1: "partial_rupture_symptom1".tr,
+                          treatment: "desc_partial_rupture".tr,
+                          image1: "assets/images/partial _rupture.png",
                         ),
-                      ]else if(controller.totalRuptureResult >
-                          controller.bruiseResult &&
-                          controller.totalRuptureResult >
-                              controller.muscleContractionResult &&
-                          controller.totalRuptureResult >
-                              controller.myositisResult &&
-                          controller.totalRuptureResult >
-                              controller.muscleStrainResult &&
-                          controller.totalRuptureResult >
-                              controller.tighteningOfMuscleResult &&
-                          controller.totalRuptureResult >
-                              controller.partialRuptureResult &&
+                      ] else if (controller.totalRuptureResult > controller.bruiseResult &&
+                          controller.totalRuptureResult > controller.muscleContractionResult &&
+                          controller.totalRuptureResult > controller.myositisResult &&
+                          controller.totalRuptureResult > controller.muscleStrainResult &&
+                          controller.totalRuptureResult > controller.tighteningOfMuscleResult &&
+                          controller.totalRuptureResult > controller.partialRuptureResult &&
                           controller.totalRuptureResult > 4) ...[
-                        const ResultCard(
-                          title: "Total Rupture:",
-                          subTitle:
-                          " Rest time before starting the treatment: According to the opinion of the doctor and after surgery if needed. Duration of the treatment : from 5 weeks to 12 weeks.",
-                          image1: "assets/total_rupture.png",
+                        ResultCard(
+                          title: "total_rupture".tr,
+                          symptoms: 1,
+                          symptom1: "total_rupture_symptom1".tr,
+                          treatment: "desc_total_rupture".tr,
+                          image1: "assets/images/total_rupture.png",
                         ),
-                      ]else...[
-                        const ResultCard(
-                          title: "Error:",
-                          subTitle:
-                          " We found a problem that contradicts your answers or didn't answer them, Please try again.",
-                          image1: "assets/space.png",
+                      ] else ...[
+                        ErrorCard(
+                          title: "error".tr,
+                          subTitle: "desc_error".tr,
                         ),
                       ],
                       const SizedBox(
                         height: 30,
                       ),
-                      CustomElevated(
+                      CustomButton(
                         press: () => controller.startAgain(),
                         btnColor: kPrimaryColor,
-                        text: 'Start Again',
+                        text: 'start_again'.tr,
                         fontSize: 22,
                       ),
                       const SizedBox(

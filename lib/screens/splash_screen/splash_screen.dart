@@ -1,9 +1,13 @@
 import 'dart:async';
+import 'dart:ui';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:python_system/constants.dart';
 import 'package:python_system/screens/welcome_screen.dart';
-import 'package:python_system/widgets/navigate_to_page.dart';
+
+import '../../widgets/navigate_to_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -28,34 +32,64 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryColor,
       body: SizedBox(
         width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            SizedBox(
-              height: 250,
-            ),
-            SizedBox(
-              height: 250,
-              width: 250,
-              child: Image(
-                image: AssetImage("assets/logo.png"),
-                fit: BoxFit.fill,
+        child: Stack(
+          children: [
+            Container(
+              height: 900,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: ExactAssetImage("assets/images/sec_logo.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.0),
+                  ),
+                ),
               ),
             ),
-            Spacer(),
-            Text(
-              'Medical System',
-              style: TextStyle(
-                  color: kPrimaryColor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2),
-            ),
-            SizedBox(
-              height: 50,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 250,
+                ),
+                const SizedBox(
+                  child: Image(
+                    image: AssetImage("assets/images/main_logo.jpg"),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                const Spacer(),
+                AnimatedTextKit(
+                  totalRepeatCount: 1,
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      'AI Physio',
+                      textStyle: GoogleFonts.cairo(
+                        textStyle: const TextStyle(
+                          color: kWhiteColor,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 4,
+                        ),
+                      ),
+                      speed: const Duration(milliseconds: 100),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
             ),
           ],
         ),
